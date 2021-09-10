@@ -1,7 +1,7 @@
 <template>
   <div id="memos"
        class="container">
-    <MemoItem v-for="item in filterMemo()"
+      <MemoItem v-for="item in filterMemo()"
               :key="item.id"
               :memo="item" />
   </div>

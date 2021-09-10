@@ -2,10 +2,13 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 import ActionHelper from './ActionHelper';
-import ItemData from '@/model/ItemData';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-//2.注册 vuex 到 vue里面
+//注册 vuex 到 vue里面
+// 注册element
 Vue.use(Vuex);
+Vue.use(ElementUI);
 
 //3.创建 vuex 的仓库对象 state -共享对象和数据 ， mutations-共享方法
 let store = new Vuex.Store({

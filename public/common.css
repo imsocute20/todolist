@@ -32,6 +32,7 @@
   }
   
   .navbar {
+    background: #fff;
     border-radius: 0;
     margin-bottom: 0;
     z-index: 1;
@@ -59,7 +60,7 @@
   }
   
   .navbar .dropdown-toggle:hover {
-    background: #e7e7e7 !important;
+    background: #fff !important;
   }
   
   .navbar .dropdown-toggle:after {
@@ -186,7 +187,6 @@
     margin-top: 6px;
     margin-bottom: 6px;
     padding-bottom: 6px;
-    border-bottom: 1px solid #bdbdbd;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

@@ -9,52 +9,15 @@
         </a>
       </div>
       <div class="collapse navbar-collapse navbar-right">
-        <ul class="nav navbar-nav">
-          <li class="add dropdown">
-            <a class="create-new dropdown-toggle"
-               data-toggle="dropdown">新建</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a @click="showAdd">文本便签</a>
-              </li>
-            </ul>
-          </li>
-          <li class="categories dropdown">
-            <a class="current-category dropdown-toggle"
-               data-toggle="dropdown">
-              全部
-              <span class="count badge">{{doFilter(-1)}}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="total"
-                  @click="doFilterByCateId(-1)">
-                <a>
-                  全部
-                  <span class="count badge">{{doFilter(-1)}}</span>
-                </a>
-              </li>
-              <li class="divider"></li>
-              <li @click="doFilterByCateId(0)">
-                <a>
-                  工作
-                  <span class="count badge">{{doFilter(0)}}</span>
-                </a>
-              </li>
-              <li @click="doFilterByCateId(1)">
-                <a>
-                  生活
-                  <span class="count badge">{{doFilter(1)}}</span>
-                </a>
-              </li>
-              <li @click="doFilterByCateId(2)">
-                <a>
-                  学习
-                  <span class="count badge">{{doFilter(2)}}</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+      <el-menu mode="horizontal">
+        <el-menu-item index="1"><el-link @click="showAdd" icon="el-icon-edit" :underline="false">添加</el-link></el-menu-item>
+        <el-submenu index="2">
+          <template slot="title"><el-link type="info" @click="doFilterByCateId(-1)" :underline="false">全部{{doFilter(-1)}}</el-link></template>
+          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(0)">工作{{doFilter(0)}}</el-link></el-menu-item>
+          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(1)">生活{{doFilter(1)}}</el-link></el-menu-item>
+          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(2)">学习{{doFilter(2)}}</el-link></el-menu-item>
+        </el-submenu>
+      </el-menu>
       </div>
     </div>
   </nav>

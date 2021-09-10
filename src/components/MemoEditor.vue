@@ -5,10 +5,10 @@
     <div id="new-markdown"
          class="editor-layer">
       <div class="editor-top">
-        <input class="editor-title form-control"
+        <el-input class="editor-title"
                type="text"
                placeholder="标题"
-               v-model="memo.title" />
+               v-model="memo.title"></el-input>
         <div class="dropdown select-category">
           <button class="btn btn-default dropdown-toggle"
                   data-toggle="dropdown">
@@ -27,12 +27,10 @@
             </li>
           </ul>
         </div>
-        <ul class="tools">
-          <li class="save"
-              @click="saveNew"></li>
-          <li class="cancel"
-              @click="closeWin"></li>
-        </ul>
+        <div class="tools">
+          <el-button icon="el-icon-edit" type="text" @click="saveNew"></el-button>
+         <el-button icon="el-icon-delete" type="text" @click="closeWin"></el-button>
+        </div>
       </div>
       <textarea class="text-content form-control"
                 placeholder="内容"
@@ -49,7 +47,7 @@ import ItemData from "../model/ItemData";
 export default class MemoEditor extends Vue {
   // 用来保存 编辑框数据
   memo: ItemData = new ItemData(-1, 0);
-
+  value: string = this.$store.state.aHelper.getCategoryName(this.memo.categoryId);
   constructor() {
     super();
     console.log(this.memo);
@@ -62,6 +60,7 @@ export default class MemoEditor extends Vue {
   }
 
   closeWin() {
+    this.$confirm(`确认删除${this.memo.title}笔记吗?`)
     this.$store.state.isShow = false;
   }
 
@@ -83,7 +82,7 @@ export default class MemoEditor extends Vue {
       }
       this.$store.state.isShow = false;
     } else {
-      window.alert("对不起，输入错误~~！");
+      this.$confirm(`输入错误哦,请输入标题和内容`)
     }
   }
 }

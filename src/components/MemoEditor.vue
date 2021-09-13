@@ -28,8 +28,8 @@
           </ul>
         </div>
         <div class="tools">
-          <el-button icon="el-icon-edit" type="text" @click="saveNew"></el-button>
-         <el-button icon="el-icon-delete" type="text" @click="closeWin"></el-button>
+          <el-button icon="el-icon-check" type="text" @click="saveNew"></el-button>
+          <el-button icon="el-icon-delete" type="text" @click="closeWin"></el-button>
         </div>
       </div>
       <textarea class="text-content form-control"

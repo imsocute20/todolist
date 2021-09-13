@@ -12,10 +12,10 @@
       <el-menu mode="horizontal">
         <el-menu-item index="1"><el-link @click="showAdd" icon="el-icon-edit" :underline="false">添加</el-link></el-menu-item>
         <el-submenu index="2">
-          <template slot="title"><el-link type="info" @click="doFilterByCateId(-1)" :underline="false">全部{{doFilter(-1)}}</el-link></template>
-          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(0)">工作{{doFilter(0)}}</el-link></el-menu-item>
-          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(1)">生活{{doFilter(1)}}</el-link></el-menu-item>
-          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(2)">学习{{doFilter(2)}}</el-link></el-menu-item>
+          <template slot="title"><el-link type="info" @click="doFilterByCateId(-1)" :underline="false">全部<span class="number">{{doFilter(-1)}}</span></el-link></template>
+          <el-menu-item icon="el-icon-check" type="text"><el-link type="info" :underline="false" @click="doFilterByCateId(0)">工作<span class="number">{{doFilter(0)}}</span></el-link></el-menu-item>
+          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(1)">生活<span class="number">{{doFilter(1)}}</span></el-link></el-menu-item>
+          <el-menu-item><el-link type="info" :underline="false" @click="doFilterByCateId(2)">学习<span class="number">{{doFilter(2)}}</span></el-link></el-menu-item>
         </el-submenu>
       </el-menu>
       </div>
@@ -47,3 +47,10 @@ export default class MenuBar extends Vue {
   }
 }
 </script>
+<style>
+.number{
+  border: 2px solid;
+  border-radius: 30px;
+  margin: 10px;
+}
+</style>

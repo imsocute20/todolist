@@ -3,8 +3,8 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand">
-        </a>
+        <div class="navbar-brand">
+        </div>
       </div>
       <div class="collapse navbar-collapse navbar-right">
       <el-menu mode="horizontal">

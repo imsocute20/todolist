@@ -4,8 +4,6 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand">
-          <img height="40"
-               src="../assets/122.png" />
         </a>
       </div>
       <div class="collapse navbar-collapse navbar-right">
